@@ -1,0 +1,66 @@
+   <Container maxWidth="lg">
+            <AppBar className={classes.appBar} position="static" color="inherit" >
+                <Typography className={classes.heading} variant="h2" align="center">Dank Memes</Typography>
+                {/*<img className={classes.image} src={memes} alt="memes" height="60"></img>*/}
+            </AppBar>
+            <Grow in>
+                <Container>
+                    <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
+                        <Grid item xs={12} sm={7}>
+                            <Posts setCurrentId={setCurrentId}/>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Grow>
+        </Container>
+////POSTS
+             !posts.length ? <CircularProgress /> : (
+           <Grid className={classes.container} container alignItems="stretch" spacing={3}>
+               {posts.map((post) => (
+                   <Grid key={post.id} item xs={12} sm={6}> 
+                        <Post post={post} setCurrentId={setCurrentId} />
+                   </Grid>
+               ))}
+           </Grid>
+
+    //////Post
+
+                <Card className={classes.card}>
+            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
+            <div>
+                <Typography variant="h6">
+                    {post.creator}
+                </Typography>
+                <Typography variant="body2">
+                    {moment(post.created).fromNow()}
+                </Typography>
+                <div className={classes.overlay2}>
+                    <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+                        <MoreHorizIcon fontSize="default" />
+                    </Button>
+                </div>
+                <div className={classes.details}>
+                 <Typography variant="body2" color="textSecondary">
+                    {post.tags.map((tag) => `#${tag} `)}
+                 </Typography>
+                </div>
+                    <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
+                <CardContent>   
+                    <Typography variant="h5" gutterBottom>{post.message}</Typography>
+                </CardContent>
+                <CardActions className={classes.cardActions}>
+                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>
+                     <ThumbUpAltIcon fontSize="small" />
+                     &nbsp; Like &nbsp;
+                     {post.likeCount}
+                 </Button>
+                 <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
+                     <DeleteIcon fontSize="small" />
+                     Delete
+                 </Button>
+                </CardActions>
+            </div>
+        </Card>
