@@ -1,26 +1,25 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
-  root: {
+  card: {
     maxWidth: 645,
     background: "rgba(0,0,0,0.8)",
-    margin: "20px"
+    margin: "20px",
+    fontFamily: "Nunito",
   },
   media: {
     height: 440,
   },
   title: {
-      fontFamily: "Nunito",
       fontWeight: "bold",
       fontSize: "2rem",
       color: "#fff"
   },
-  desc: {
+  description: {
      color: "#ddd",
-     fontFamily: "Nunito",
      fontSize: "1.1rem",
   },
-  btn: {
+  button: {
       color: "#fff",
   },
   creator: {

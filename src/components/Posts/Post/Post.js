@@ -18,7 +18,7 @@ function Post({ post, setCurrentId, checked, openForm }){
 
     return(
         <Collapse in={checked} {...(checked ? {timeout: 1000}: {})} collapsedHeight={0}>
-        <Card className={classes.root}>
+        <Card className={classes.card}>
           <CardMedia
             className={classes.media}
             image={post.selectedFile}
@@ -34,21 +34,21 @@ function Post({ post, setCurrentId, checked, openForm }){
             <Typography variant="h6" className={classes.creator}>
                Created by {post.creator}
            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" className={classes.desc}>
+            <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
               {post.message}
             </Typography>
           </CardContent>
         <CardActions>
-            <Button size="small" className={classes.btn} onClick={() => dispatch(likePost(post._id))}>
+            <Button size="small" className={classes.button} onClick={() => dispatch(likePost(post._id))}>
                 <ThumbUpAltIcon fontSize="small" />
                 &nbsp; Like &nbsp;
                 {post.likeCount}
             </Button>
-            <Button size="small" className={classes.btn} onClick={() => dispatch(deletePost(post._id))}>
+            <Button size="small" className={classes.button} onClick={() => dispatch(deletePost(post._id))}>
             <DeleteIcon fontSize="small" />
                 Delete
             </Button>
-            <Button size="small" className={classes.btn} onClick={editPost}>
+            <Button size="small" className={classes.button} onClick={editPost}>
                 <MoreHorizIcon fontSize="small"/>Edit
             </Button>
         </CardActions>
