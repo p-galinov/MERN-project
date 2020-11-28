@@ -1,11 +1,11 @@
 import React from "react";
-import useStyles from "./postStyles";
 import {Card, CardActions, CardContent, CardMedia, Button, Typography, Collapse} from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../../actions/posts";
+import useStyles from "./postStyles";
 
 function Post({ post, setCurrentId, checked, openForm }){
     const classes = useStyles();
