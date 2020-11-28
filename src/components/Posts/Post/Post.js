@@ -1,5 +1,5 @@
 import React from "react";
-import useStyles from "./styles";
+import useStyles from "./postStyles";
 import {Card, CardActions, CardContent, CardMedia, Button, Typography, Collapse} from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import DeleteIcon from "@material-ui/icons/Delete";
