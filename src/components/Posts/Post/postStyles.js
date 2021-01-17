@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles({
   card: {
-    maxWidth: 645,
+    width: 645,
     background: "rgba(0,0,0,0.8)",
     margin: "20px",
     fontFamily: "Nunito",

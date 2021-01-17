@@ -11,7 +11,7 @@ function Posts({ setCurrentId, openForm }){
     const checked = useWindowPosition('header');
 
     return(
-       !posts.length ? <CircularProgress /> : (
+       !posts.length ? <CircularProgress className={classes.loading} /> : (
           <div className={classes.root} id="place-to-visit">
             {posts.map((post) => (
                     <Post post={post} setCurrentId={setCurrentId} checked={checked} key={post._id} openForm={openForm}/>

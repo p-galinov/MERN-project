@@ -7,5 +7,13 @@ export default makeStyles((theme) => ({
       justifyContent: "center",
       alignItems: "center",
       flexWrap: 'wrap',
+  },
+  loading:{ 
+   position: "absolute",
+   left: "0",
+   right: "0",
+   margin: "auto",
+   marginTop: "-20vh",
+   color: "white",
   }
 }));
