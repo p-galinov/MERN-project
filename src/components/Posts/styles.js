@@ -15,5 +15,5 @@ export default makeStyles((theme) => ({
    margin: "auto",
    marginTop: "-20vh",
    color: "white",
-  }
+  },
 }));

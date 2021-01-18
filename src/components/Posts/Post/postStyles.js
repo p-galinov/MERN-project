@@ -27,5 +27,10 @@ export default makeStyles({
   },
   tags: {
       color: "rgb(252, 173, 104)",
-  }
+  },
+  '@media screen and (max-width: 750px)': {
+    card: {
+      width: "90%",
+    },
+  },
 });
